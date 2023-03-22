@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class PlanetController {
     final private PlanetRepo planetRepo;
     final String nasaApi = "https://images-api.nasa.gov/asset/{nasa_id}";
+    final  String imageLink = "https://images-api.nasa.gov/metadata/{nasa_id}";
     public PlanetController(final @Autowired PlanetRepo planetRepo) {
         this.planetRepo = planetRepo;
     }
@@ -27,5 +28,14 @@ public class PlanetController {
                .retrieve()
                .bodyToMono(String.class)
                .block();
+    }
+    @GetMapping ("/image/{nasa_id}")
+    public String getPlanetImage(@PathVariable("nasa_id") String nasaId){
+        return webClientBuilder.build()
+                .get()
+                .uri(imageLink,nasaId)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
     }
 }
