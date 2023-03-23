@@ -1,0 +1,93 @@
+body{
+    background-color: #443C68;
+    cursor: url(icons8-spaceman-64.png), auto;
+
+}
+
+
+.Home{
+    text-align: center;
+    justify-content: center;
+    cursor: url(icons8-spaceman-64.png), auto;
+
+}
+
+img{
+
+    margin: auto;
+    display: block;
+    width: 450px;
+    /* height: 300px; */
+    display: flex;
+    justify-content: center;
+    padding-top: 110px;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+
+
+}
+
+button{
+    position: relative;
+    background-color: #393053;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    align-items: center;
+    /* text-align: center; */
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: url(icons8-spaceman-64.png), auto;
+    border-radius: 25px;
+    font-weight: bolder;
+
+
+}
+
+button:hover{
+    background-color: #18122B;
+    box-shadow: 0 0 2px purple,
+    0 4 4px darkmagenta,
+    0 6 12px white;
+
+}
+
+
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+}
+
+ul{
+    color: white;
+}
+
+li{
+    color: white;
+}
+
+
+
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+}
