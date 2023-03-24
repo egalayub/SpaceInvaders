@@ -1,10 +1,10 @@
 import React, { isValidElement } from "react";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import "./Home.css";
 import { FaEnvelopeSquare, FaGithub, FaLinkedin, FaMoon, FaPhone, FaPhoneAlt, FaSearch, FaSpaceShuttle, FaStar, FaVoicemail, IconName } from "react-icons/fa";
 import "./ListPlanet.jsx";
 import ListPlanet from "./ListPlanet.jsx";
-// import ListPlanets from "./ListPlanet.jsx";
+// import ListPlanets from "./ListPlanets.jsx";
 
 export default function Home() {
     const [Planets, setPlanets] = useState([
@@ -40,6 +40,8 @@ export default function Home() {
     const [fact, setFact] = useState('The Earth is the only planet in our solar system not named after a god.');
     const [MarsFact, setMarsFact] = useState('Mars is the fourth planet from the sun and the second smallest planet in the solar system.');
     const [JupFact, setJupFact] = useState('Jupiter is the largest planet in our solar system, more than twice the size of all the other planets combined.');
+
+
 
 
     const earthFacts = [
@@ -119,7 +121,7 @@ export default function Home() {
         if(ShowImg === true && ActivePlanet === ('Mars')){
             return(
                 <div>
-                    <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="" />
+                    <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="space" />
                     <p></p>
                 </div>
             )
@@ -130,7 +132,7 @@ export default function Home() {
         if(ShowImg === true && ActivePlanet === ('Earth')){
             return(
                 <div>
-                    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="" />
+                    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="space" />
                 </div>
             )
         }
@@ -140,7 +142,7 @@ export default function Home() {
         if(ShowImg === true && ActivePlanet === ('Jupiter')){
             return(
                 <div>
-                    <img src="https://cdn.britannica.com/84/4284-050-16C7E8C2/Photograph-Jupiter-range-Voyager-1-cloud-bands-February-1-1979.jpg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Jupiter%27s_swirling_colourful_clouds.jpg" alt="space" />
                 </div>
             )
         }
@@ -194,10 +196,15 @@ export default function Home() {
 
 
 
-
     if (ActivePlanet == "")
         return (
+
+
+
+
             <div className="Home">
+
+
                 <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
                 <h2>Which planet do you want to explore?</h2>
 
@@ -205,9 +212,13 @@ export default function Home() {
                 <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
                 <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
 
-                <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" />
+
+                <img src="https://d.newsweek.com/en/full/2096815/astronaut-spaceman-do-spacewalk.jpg" alt="space" />
+                {/* <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" /> */}
 
                 <div className="Contact" >
+
+
                     <h1>
                         CONTACT
                     </h1>
@@ -222,9 +233,17 @@ export default function Home() {
                 </div>
 
             </div>
+
+
+
         );
+
     else
         return (
+
+
+
+
             <div>
                 <h1>{ActivePlanet}</h1>
                 <p>{displayEarthImg()}
@@ -240,6 +259,7 @@ export default function Home() {
 
                 <button onClick={() => setActivePlanet("")}>Go back</button>
             </div>
+
 
         );
 }
