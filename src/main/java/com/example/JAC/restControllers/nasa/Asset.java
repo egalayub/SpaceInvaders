@@ -1,4 +1,4 @@
-package com.example.JAC.restControllers;
+package com.example.JAC.restControllers.nasa;
 
 public class Asset {
     public Collection collection;
