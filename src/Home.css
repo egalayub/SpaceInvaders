@@ -1,6 +1,21 @@
+*{
+    max-width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+
 body{
+    max-width: 100%;
+    max-height: 100%;
     background-color: #443C68;
     cursor: url(icons8-spaceman-64.png), auto;
+    scroll-behavior: smooth;
+
 
 }
 
@@ -12,25 +27,42 @@ body{
 
 }
 
-img{
+a{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+}
 
+img{
+    max-width: 100%;
+    max-height: 100%;
     margin: auto;
     display: block;
-    width: 450px;
+    width: 400px;
     /* height: 300px; */
     display: flex;
     justify-content: center;
-    padding-top: 110px;
+    padding-top: 20px;
     /* position: absolute; */
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
 
-
-
 }
 
+#space {
+    max-width: 100%;
+    max-height: 100%;
+    width: 800px;
+}
+
+
+
+
 button{
+    display: flex;
     position: relative;
     background-color: #393053;
     border: none;
@@ -42,15 +74,15 @@ button{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 25px;
     cursor: url(icons8-spaceman-64.png), auto;
-    border-radius: 25px;
-    font-weight: bolder;
-
+    border-radius: 50px;
+    font-weight: bolder
 
 }
 
 button:hover{
+    /* border-radius: 100%; */
     background-color: #18122B;
     box-shadow: 0 0 2px purple,
     0 4 4px darkmagenta,
@@ -60,7 +92,10 @@ button:hover{
 
 
 
+
+
 h1{
+    font-size: 50px;
     text-align: center;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -69,7 +104,7 @@ h1{
 
 
 h2{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     text-align: center;
 
