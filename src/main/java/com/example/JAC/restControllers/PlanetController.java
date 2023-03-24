@@ -2,6 +2,8 @@ package com.example.JAC.restControllers;
 
 import com.example.JAC.Entities.Planet;
 import com.example.JAC.Repos.PlanetRepo;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +23,18 @@ public class PlanetController {
     @Autowired
     private WebClient.Builder webClientBuilder;
     @GetMapping ("/asset/{nasa_id}")
-    public String getPlanet(@PathVariable("nasa_id") String nasaId){
-       return webClientBuilder.build()
-               .get()
-               .uri(nasaApi,nasaId)
-               .retrieve()
-               .bodyToMono(String.class)
-               .block();
+    public String getPlanet(@PathVariable("nasa_id") String nasaId) throws JsonProcessingException {
+        String json = webClientBuilder.build()
+                .get()
+                .uri(nasaApi, nasaId)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+
+        Asset asset = (new ObjectMapper()).readValue(json, Asset.class);
+        System.out.println(asset);
+
+        return json;
     }
     @GetMapping ("/image/{nasa_id}")
     public String getPlanetImage(@PathVariable("nasa_id") String nasaId){
