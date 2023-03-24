@@ -21,7 +21,8 @@ public class PlanetController {
     }
     @Autowired
     private WebClient.Builder webClientBuilder;
-    @GetMapping ("/asset/{nasa_id}")
+
+    @GetMapping (value = "/asset/{nasa_id}" , produces="application/json")
     public String getPlanet(@PathVariable("nasa_id") String nasaId) throws JsonProcessingException {
         String json = webClientBuilder.build()
                 .get()
@@ -35,7 +36,8 @@ public class PlanetController {
 
         return json;
     }
-    @GetMapping ("/image/{nasa_id}")
+
+    @GetMapping (value = "/image/{nasa_id}", produces="application/json")
     public String getPlanetImage(@PathVariable("nasa_id") String nasaId){
         return webClientBuilder.build()
                 .get()
