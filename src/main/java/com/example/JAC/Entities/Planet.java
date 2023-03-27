@@ -9,10 +9,11 @@ public class Planet {
     String description;
     @Id
     String id;
-    public Planet (String name, String description, String id){
-        this.name=name;
-        this.description= description;
-        this.id= id;
+
+    public Planet(String name, String description, String id) {
+        this.name = name;
+        this.description = description;
+        this.id = id;
     }
 
     public String getName() {

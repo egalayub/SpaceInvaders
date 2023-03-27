@@ -1,38 +1,24 @@
-import React, { isValidElement } from "react";
-import { useState , useEffect} from "react";
+import React, {isValidElement} from "react";
+import {useState, useEffect} from "react";
 import "./Home.css";
-import { FaEnvelopeSquare, FaGithub, FaLinkedin, FaMoon, FaPhone, FaPhoneAlt, FaSearch, FaSpaceShuttle, FaStar, FaVoicemail, IconName } from "react-icons/fa";
+import {
+    FaEnvelopeSquare,
+    FaGithub,
+    FaLinkedin,
+    FaMoon,
+    FaPhone,
+    FaPhoneAlt,
+    FaSearch,
+    FaSpaceShuttle,
+    FaStar,
+    FaVoicemail,
+    IconName
+} from "react-icons/fa";
 import "./ListPlanet.jsx";
 import ListPlanet from "./ListPlanet.jsx";
 // import ListPlanets from "./ListPlanets.jsx";
 
 export default function Home() {
-    const [Planets, setPlanets] = useState([
-        {
-            name: "Earth",
-            funfact: "Did you know earth is 70% water?",
-            img: "https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015__340.jpg",
-            id: "0",
-        },
-        {
-            name: "Mars",
-            funfact: "This is mars, woooww",
-            img: "url",
-            id: "1",
-        },
-        {
-            name: "Jupiter",
-            funfact: "This is mars, woooww",
-            img: "url",
-            id: "2",
-        },
-        {
-            name: "Saturn",
-            funfact: "This is saturn, woooww",
-            img: "url",
-            id: "3",
-        },
-    ]);
 
     const [ActivePlanet, setActivePlanet] = useState("");
     const [PlanetFacts, setPlanetFacts] = useState("");
@@ -40,9 +26,6 @@ export default function Home() {
     const [fact, setFact] = useState('The Earth is the only planet in our solar system not named after a god.');
     const [MarsFact, setMarsFact] = useState('Mars is the fourth planet from the sun and the second smallest planet in the solar system.');
     const [JupFact, setJupFact] = useState('Jupiter is the largest planet in our solar system, more than twice the size of all the other planets combined.');
-
-
-
 
     const earthFacts = [
         'About 70% of the Earth’s surface is covered in water.',
@@ -55,8 +38,6 @@ export default function Home() {
         'The Earth orbits the sun at an average distance of 93 million miles (149.6 million kilometers).',
         'The Earth’s orbit is not a perfect circle, but is instead an elliptical shape.',
     ]
-
-
 
     const marsFacts = [
         'Mars is the fourth planet from the sun and the second smallest planet in the solar system.',
@@ -71,8 +52,6 @@ export default function Home() {
         'Mars has polar ice caps that are made of frozen carbon dioxide and water.',
     ];
 
-
-
     const jupiterFacts = [
         'Jupiter has the shortest day of any planet in our solar system, with one day on Jupiter lasting only about 10 hours.',
         'Jupiter has at least 79 moons, with the four largest known as Io, Europa, Ganymede, and Callisto.',
@@ -85,17 +64,10 @@ export default function Home() {
         'Jupiter is visible to the naked eye and can often be seen in the night sky.',
     ];
 
-
-
-
-
     function handleClickMars() {
         const randomMarsFact = marsFacts[Math.floor(Math.random() * marsFacts.length)];
         setMarsFact(randomMarsFact);
     }
-
-
-
 
     function handleClick() {
         const randomFact = earthFacts[Math.floor(Math.random() * earthFacts.length)];
@@ -108,50 +80,54 @@ export default function Home() {
         setJupFact(randomJupFact);
     }
 
-
-    function lightSwitch(){
-        if(ShowImg === false){
+    function lightSwitch() {
+        if (ShowImg === false) {
             setShowImg(true)
 
         }
     }
 
-
-    function displayMarsImg(){
-        if(ShowImg === true && ActivePlanet === ('Mars')){
-            return(
+    function displayMarsImg() {
+        if (ShowImg === true && ActivePlanet === 'Mars') {
+            return (
                 <div>
-                    <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0=" alt="space" />
+                    <img
+                        src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21hcnMtYTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTB9fX0="
+                        alt="space"/>
                     <p></p>
                 </div>
             )
         }
     }
 
-    function displayEarthImg(){
-        if(ShowImg === true && ActivePlanet === ('Earth')){
-            return(
+    function displayEarthImg() {
+        if (ShowImg === true && ActivePlanet === 'Earth') {
+            return (
                 <div>
-                    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="space" />
+                    <img
+                        src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        alt="space"/>
                 </div>
             )
         }
     }
 
-    function displayJupiterImg(){
-        if(ShowImg === true && ActivePlanet === ('Jupiter')){
-            return(
+    function displayJupiterImg() {
+        if (ShowImg === true && ActivePlanet === 'Jupiter') {
+            return (
                 <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Jupiter%27s_swirling_colourful_clouds.jpg" alt="space" />
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Jupiter%27s_swirling_colourful_clouds.jpg"
+                        alt="space"/>
                 </div>
             )
         }
     }
 
-    function earthFunFact(){
-        if(ActivePlanet === ("Earth") ){
+    function earthFunFact() {
+        if (ActivePlanet === "Earth") {
 
-            return(
+            return (
                 <div>
                     <p>
                         {fact}
@@ -162,10 +138,10 @@ export default function Home() {
         }
     }
 
-    function marsFunFact(){
-        if(ActivePlanet === ("Mars") ){
+    function marsFunFact() {
+        if (ActivePlanet === "Mars") {
 
-            return(
+            return (
 
                 <div>
                     <p>
@@ -177,10 +153,10 @@ export default function Home() {
         }
     }
 
-    function jupiterFunFact(){
-        if(ActivePlanet === ("Jupiter") ){
+    function jupiterFunFact() {
+        if (ActivePlanet === "Jupiter") {
 
-            return(
+            return (
 
                 <div>
                     <p>
@@ -193,37 +169,29 @@ export default function Home() {
         }
     }
 
-
-
-
-    if (ActivePlanet == "")
+    if (ActivePlanet === "")
         return (
 
-
-
-
             <div className="Home">
-
-
-                <h1> <FaStar /> ADVENTURES WITH SPACE INVADERS <FaStar />  </h1>
+                <h1><FaStar/> ADVENTURES WITH SPACE INVADERS <FaStar/></h1>
                 <h2>Which planet do you want to explore?</h2>
 
-                <button onClick={() => setActivePlanet("Earth")} >Earth <FaSpaceShuttle />  </button>
-                <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle /></button>
-                <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle />  </button>
+                <button onClick={() => setActivePlanet("Earth")}>Earth <FaSpaceShuttle/></button>
+                <button onClick={() => setActivePlanet("Mars")}>Mars <FaSpaceShuttle/></button>
+                <button onClick={() => setActivePlanet("Jupiter")}>Jupiter <FaSpaceShuttle/></button>
 
 
-                <img src="https://d.newsweek.com/en/full/2096815/astronaut-spaceman-do-spacewalk.jpg" alt="space" />
+                <img src="https://d.newsweek.com/en/full/2096815/astronaut-spaceman-do-spacewalk.jpg" alt="space"/>
                 {/* <img src="https://img.freepik.com/free-vector/paper-style-galaxy-background_23-2148985024.jpg" alt="" id="space" /> */}
 
-                <div className="Contact" >
+                <div className="Contact">
 
 
                     <h1>
                         CONTACT
                     </h1>
                     <p>
-                        <a href="https://www.linkedin.com/in/justin-cambria/">LINKEDIN <FaLinkedin /> </a>
+                        <a href="https://www.linkedin.com/in/justin-cambria/">LINKEDIN <FaLinkedin/> </a>
                     </p>
                     <p>
                         <a href="mailto: jrcambria92@gmail.com">EMAIL<FaEnvelopeSquare/> </a>
@@ -235,13 +203,10 @@ export default function Home() {
             </div>
 
 
-
         );
 
     else
         return (
-
-
 
 
             <div>
@@ -252,9 +217,12 @@ export default function Home() {
 
                 {marsFunFact()} {earthFunFact()} {jupiterFunFact()}
 
-                <button onClick={() => {lightSwitch()}}>View Photo</button>
+                <button onClick={() => {
+                    lightSwitch()
+                }}>View Photo
+                </button>
 
-                <button onClick={() => setShowImg (false)}>Hide Photo</button>
+                <button onClick={() => setShowImg(false)}>Hide Photo</button>
 
 
                 <button onClick={() => setActivePlanet("")}>Go back</button>
